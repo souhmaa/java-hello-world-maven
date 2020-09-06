@@ -9,11 +9,9 @@ pipeline {
 
     stages {
 
-        stage ("Display") {
+        stage ("Build") {
             steps {
-                sh "echo HELLO WORLD"
-                sh "mvn --version"
-                sh "java -version"
+                sh "mvn package"
             }
         }
 
