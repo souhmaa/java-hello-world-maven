@@ -12,8 +12,10 @@ pipeline {
 
         stage ("Build") {
             steps {
-                sh "mvn --version"
-                sh "mvn help:effective-pom"
+                configFileProvider([configFile(fileId: 'mvn-settings', variable: 'MAVEN_SETTINGS_XML')]) {
+                    sh "mvn --version"
+                    sh "mvn -s $MAVEN_SETTINGS_XML help:effective-pom"
+                }
             }
         }
 
