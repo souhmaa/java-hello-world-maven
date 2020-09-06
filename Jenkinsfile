@@ -13,7 +13,7 @@ pipeline {
             steps {
                 sh "echo HELLO WORLD"
                 sh "mvn --version"
-                sh "jave --version"
+                sh "java --version"
             }
         }
 
