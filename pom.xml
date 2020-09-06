@@ -11,6 +11,17 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <distributionManagement>
+        <snapshotRepository>
+            <id>${snapshotRepositoryId}</id>
+            <url>${snapshotRepositoryUrl}</url>
+        </snapshotRepository>
+        <repository>
+            <id>${releaseRepositoryId}</id>
+            <url>${releaseRepositoryUrl}</url>
+        </repository>
+    </distributionManagement>
+
     <build>
         <plugins>
             <!-- Maven Assembly Plugin -->
