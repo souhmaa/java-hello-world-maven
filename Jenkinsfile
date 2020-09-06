@@ -4,7 +4,7 @@ pipeline {
 
     stages {
 
-        stage {
+        stage ("Display") {
             steps {
                 sh "echo HELLO WORLD"
             }
