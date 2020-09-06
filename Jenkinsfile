@@ -1,6 +1,6 @@
 pipeline {
 
-    agent {label 'dockr-slave'}
+    agent {label 'docker-slave'}
 
     stages {
 
