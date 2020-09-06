@@ -1,7 +1,7 @@
 pipeline {
 
-    // agent {label 'docker-slave'}
-    agent any
+    agent {label 'docker-slave'}
+    //agent {label 'master'}
 
     tools {
         jdk "jdk-8"
@@ -12,10 +12,11 @@ pipeline {
 
         stage ("Build") {
             steps {
-                configFileProvider([configFile(fileId: 'mvn-settings', variable: 'MAVEN_SETTINGS_XML')]) {
+                // configFileProvider([configFile(fileId: 'mvn-settings', variable: 'MAVEN_SETTINGS_XML')]) {
                     sh "mvn --version"
-                    sh "mvn -s $MAVEN_SETTINGS_XML help:effective-pom"
-                }
+                    // sh "mvn -s $MAVEN_SETTINGS_XML help:effective-pom"
+                    sh "mvn help:effective-pom"
+                // }
             }
         }
 
